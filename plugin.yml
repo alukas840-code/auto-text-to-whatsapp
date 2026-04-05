@@ -1,0 +1,35 @@
+timezone: Asia/Almaty
+allowed-groups:
+  - "1203630XXXXXXXX@g.us"
+default-reminder-time: "09:00"
+anti-spam:
+  max-input-chars: 2000
+  max-output-chars: 3000
+  ai-cooldown-sec: 3
+  g-window-sec: 60
+  g-max-per-window: 5
+  task-window-sec: 60
+  task-max-per-window: 10
+stt:
+  provider: mock-stt
+  max-minutes: 5
+  max-file-mb: 20
+ai:
+  provider: mock-ai
+bridge:
+  provider: mock-whatsapp-bridge
+  supports-delete: true
+  supports-kick: false
+  supports-add: false
+levels:
+  "1":
+    description: "Базовый"
+    commands: [/help, /ai, /sum, /rw, /tr, /g, /list, /who, /profile, /dostup, /tasks, /done, /ping, /clear]
+  "2":
+    description: "Расширенный"
+    inherits: ["1"]
+    commands: [/task, /taskdel, /del, /kick, /add]
+  "3":
+    description: "Администратор"
+    inherits: ["2"]
+    commands: [/surname, /role, /setprofile, "/dostup @user 1|2|3"]
