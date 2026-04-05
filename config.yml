@@ -1,0 +1,39 @@
+# Default configuration for DaurenBot.
+#
+# The timezone used for scheduling reminders.  Use a standard
+# IANA timezone identifier.  The default is Asia/Almaty to
+# align with the user's locale.
+timezone: "Asia/Almaty"
+
+# The default time of day (24h HH:MM) to send reminders when
+# no explicit time is provided in a task.  For example, a task
+# created with `/task @user 12.04 Текст` will use this time.
+default-reminder-time: "09:00"
+
+# Additional configuration keys (levels, whitelist, etc.) can be
+# added here as needed.  They are not currently used by the
+# reference implementation but illustrate how you might extend
+# the plugin.
+#
+# levels:
+#   1:
+#     name: "base"
+#     can-use:
+#       - ai
+#       - sum
+#       - rw
+#       - tr
+#       - g
+#   2:
+#     name: "manager"
+#     can-use:
+#       - task
+#       - tasks
+#       - done
+#       - taskdel
+#   3:
+#     name: "owner"
+#     can-use:
+#       - surname
+#       - role
+#       - setprofile
