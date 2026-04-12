@@ -1,0 +1,70 @@
+timezone: "Asia/Almaty"
+
+allowed-groups:
+  - "1203630XXXXXXXX@g.us"
+
+default-reminder-time: "09:00"
+
+logging:
+  enabled: false
+  debug: false
+
+persona:
+  dm-name: "Дәурен"
+  dm-role: "виртуальный коллега"
+  dm-greeting-enabled: true
+  dm-style-use-formal-you: true
+
+anti-spam:
+  max-input-chars: 2000
+  max-output-chars: 3000
+  ai-cooldown-sec: 3
+  g-window-sec: 60
+  g-max-per-window: 5
+  task-window-sec: 60
+  task-max-per-window: 10
+
+access-levels:
+  1:
+    name: "base"
+    commands:
+      - help
+      - ai
+      - sum
+      - rw
+      - tr
+      - g
+      - list
+      - who
+      - profile
+      - dostup
+      - tasks
+      - done
+      - ping
+      - clear
+  2:
+    name: "manager"
+    inherits: [1]
+    commands:
+      - task
+      - taskdel
+      - del
+      - kick
+      - add
+  3:
+    name: "owner"
+    inherits: [2]
+    commands:
+      - surname
+      - role
+      - setprofile
+      - dostup-set
+
+whatsapp:
+  mode: "mock"
+
+ai:
+  provider: "mock"
+
+stt:
+  provider: "mock"
